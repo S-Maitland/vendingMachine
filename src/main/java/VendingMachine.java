@@ -41,27 +41,27 @@ public class VendingMachine {
         return total;
     }
 
-    public void addProduct(Product product){
-        this.drawerA1.addProduct(product);
+    public void addProduct(ProductCode productCode, Product product){
+        if (productCode == ProductCode.A1) {
+            this.drawerA1.addProduct(product);
+        } else if (productCode == ProductCode.B2){
+            this.drawerB2.addProduct(product);
+        } else if (productCode == ProductCode.C3){
+            this.drawerC3.addProduct(product);
+        }
     }
 
     public Product buyProduct(ProductCode productCode){
 
         double totalCoins = this.getCoinsTotal();
-        Product vendProduct = null;
 
         if(productCode == ProductCode.A1 && totalCoins >= drawerA1.getPrice()) {
-            vendProduct = drawerA1.returnProduct();
-        } else {
-            if (productCode == ProductCode.B2 && totalCoins >= drawerB2.getPrice()) {
-                vendProduct = drawerB2.returnProduct();
-            } else {
-                if (productCode == ProductCode.C3 && totalCoins >= drawerC3.getPrice()) {
-                    vendProduct = drawerC3.returnProduct();
-                }
-            }
+            return drawerA1.returnProduct();
+        } else if (productCode == ProductCode.B2 && totalCoins >= drawerB2.getPrice()) {
+            return drawerB2.returnProduct();
+            } else if (productCode == ProductCode.C3 && totalCoins >= drawerC3.getPrice()) {
+            return drawerC3.returnProduct();
         }
-        return vendProduct;
+        return null;
     }
-
 }

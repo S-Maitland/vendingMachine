@@ -39,13 +39,14 @@ public class VendingMachineTest {
 
     @Test
     public void canAddProductsToDrawer(){
-        vendingMachine.addProduct(drink);
+        vendingMachine.addProduct(ProductCode.A1, drink);
         assertEquals(1, vendingMachine.drawerA1.getProductCount());
     }
 
     @Test
     public void canBuyProductFromVendingMachine(){
-        vendingMachine.addProduct(drink);
-        assertEquals(drink , vendingMachine.buyProduct(ProductCode.A1));
+        vendingMachine.addCoin(coin1);
+        vendingMachine.addProduct(ProductCode.A1, drink);
+        assertEquals(drink, vendingMachine.buyProduct(ProductCode.A1));
     }
 }
