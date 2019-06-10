@@ -3,6 +3,6 @@ package Product;
 public enum ProductCode {
 
     A1,
-    B1,
+    B2,
     C3;
 }

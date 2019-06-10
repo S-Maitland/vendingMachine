@@ -35,8 +35,8 @@ public class Drawer {
         this.products.add(product);
     }
 
-    public void returnProduct(Product product) {
-        this.products.remove(product);
+    public Product returnProduct() {
+        return this.products.remove(0);
     }
 
     public int getProductCount() {

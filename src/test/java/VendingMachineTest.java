@@ -37,4 +37,15 @@ public class VendingMachineTest {
         assertEquals(1.70, vendingMachine.getCoinsTotal(),0.01);
     }
 
+    @Test
+    public void canAddProductsToDrawer(){
+        vendingMachine.addProduct(drink);
+        assertEquals(1, vendingMachine.drawerA1.getProductCount());
+    }
+
+    @Test
+    public void canBuyProductFromVendingMachine(){
+        vendingMachine.addProduct(drink);
+        assertEquals(drink , vendingMachine.buyProduct(ProductCode.A1));
+    }
 }

@@ -31,7 +31,7 @@ public class DrawerTest {
     @Test
     public void canReturnProductFromDrawer(){
         drawer.addProduct(drink);
-        drawer.returnProduct(drink);
+        drawer.returnProduct();
         assertEquals(0, drawer.getProductCount());
     }
 
@@ -52,9 +52,8 @@ public class DrawerTest {
 
     @Test
     public void canSetDrawerProductCode(){
-        drawer.setProductCode(ProductCode.B1);
-        assertEquals(ProductCode.B1, drawer.getProductCode());
+        drawer.setProductCode(ProductCode.B2);
+        assertEquals(ProductCode.B2, drawer.getProductCode());
     }
-
 
 }
