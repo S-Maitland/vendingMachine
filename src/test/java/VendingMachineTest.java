@@ -37,11 +37,4 @@ public class VendingMachineTest {
         assertEquals(1.70, vendingMachine.getCoinsTotal(),0.01);
     }
 
-//    @Test
-//    public void canBuyProduct(){
-//        vendingMachine.addProduct(drink);
-//        vendingMachine.buyProduct(ProductCode.C3);
-//        assertEquals(0, vendingMachine);
-//    }
-
 }

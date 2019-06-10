@@ -1,20 +1,22 @@
 import Coins.Coin;
 import Coins.CoinReturn;
-import Product.Product;
 
 import java.util.ArrayList;
 
 public class VendingMachine {
 
     private CoinReturn coinReturn;
-    private ArrayList<Drawer> drawers;
+    private ArrayList<Drawer> drawerA1;
+    private ArrayList<Drawer> drawerB2;
+    private ArrayList<Drawer> drawerC3;
     private ArrayList<Coin> credit;
 
     public VendingMachine() {
         credit = new ArrayList<Coin>();
-        drawers = new ArrayList<Drawer>();
+        drawerA1 = new ArrayList<Drawer>();
+        drawerB2 = new ArrayList<Drawer>();
+        drawerC3 = new ArrayList<Drawer>();
         coinReturn = new CoinReturn();
-//        drawer = new Drawer(ProductCode.C3, 1.00);
     }
 
     public void addCoin(Coin coin){
@@ -25,7 +27,6 @@ public class VendingMachine {
         } else {
             coinReturn.addCoin(coin);
         }
-
     }
 
     public double getCoinsTotal(){
@@ -35,9 +36,5 @@ public class VendingMachine {
             total += currentCoin.getValue();
         }
         return total;
-    }
-
-    public void addProduct(Product product){
-        this.drawers.add(product);
     }
 }
